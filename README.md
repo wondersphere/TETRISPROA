@@ -1,2 +1,5 @@
 # TetrisProA
-Tetris ProA Capstone Project - Jakarta's AQI Value Analysis for 2016-2022
+Tetris ProA Capstone Project - Air Quality Index in Central and South Jakarta (2016-2022)
+
+Streamlit link:
+https://wondersphere-tetrisproa-capstone-y1g8to.streamlitapp.com/
