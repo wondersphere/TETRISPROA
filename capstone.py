@@ -148,7 +148,7 @@ st.markdown("")
 st.subheader("Monthly Data")
 
 st.markdown("")
-st.markdown("Here we can see how the monthly AQI value changes over time in more detail.")
+st.markdown("Here we can see how the monthly AQI value changed over time in more detail.")
             
 ### Central Jakarta
 st.markdown("**Central Jakarta**")
@@ -174,7 +174,7 @@ st.dataframe(data_monthly[data_monthly["Loc"] == "South Jakarta"]\
 
 st.header("Conclusion")
 
-st.markdown("While the AQI level dropped during the COVID lockdown period, we can see an upward trends in 2022. It is even more drastic in South Jakarta area during January 2022 where the AQI value reached the record high for the past 6 years.")
+st.markdown("While the AQI level dropped a lot during the COVID lockdown period, we can see an upward trends in 2022. It is even more drastic in South Jakarta area during January 2022 where the AQI value reached the record high for the past 6 years.")
 st.markdown("Left uncorrected withouth any action, we can expect the AQI values to rise beyond what we had in 2016.")
 
 
