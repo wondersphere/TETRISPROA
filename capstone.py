@@ -8,9 +8,13 @@ import streamlit.components.v1 as components
 st.title("Air Quality Index in Central and South Jakarta (2016-2022)")
 
 # Import the data
-c_data = pd.read_csv("jakarta-central (us consulate), indonesia-air-quality.csv", header = 0, names = ["Date", "PM25", "PM10"])
+c_data = pd.read_csv("jakarta-central (us consulate), indonesia-air-quality.csv", 
+                     header = 0, 
+                     names = ["Date", "PM25", "PM10"])
 c_data["Loc"] = "Central Jakarta"
-s_data = pd.read_csv("jakarta-south (us consulate), indonesia-air-quality.csv", header = 0, names = ["Date", "PM25", "PM10"])
+s_data = pd.read_csv("jakarta-south (us consulate), indonesia-air-quality.csv", 
+                     header = 0, 
+                     names = ["Date", "PM25", "PM10"])
 s_data["Loc"] = "South Jakarta"
 data = pd.concat([c_data, s_data])
 
@@ -29,9 +33,14 @@ data["Month"] = data["Date"].dt.strftime("%Y-%m")
 data.drop(index = data[data["Year"] < 2016].index, inplace = True)
 
 # Group data (monthly)
-data_monthly = data.drop(columns = ["Date", "Year"]).groupby(["Month", "Loc"]).agg(["min", "mean", "max"]).reset_index()
-data_monthly.columns = [" ".join(column) for column in data_monthly.columns.to_flat_index()]
-data_monthly.columns = [column.strip() for column in data_monthly.columns]
+data_monthly = data.drop(columns = ["Date", "Year"]).\
+    groupby(["Month", "Loc"]).\
+    agg(["min", "mean", "max"]).\
+reset_index()
+data_monthly.columns = \
+    [" ".join(column) for column in data_monthly.columns.to_flat_index()]
+data_monthly.columns = \
+    [column.strip() for column in data_monthly.columns]
 
 # Group date (yearly)
 data_yearly = data.drop(columns = ["Date", "Month"]).groupby(["Year", "Loc"]).agg(["min", "mean", "max"]).reset_index()
