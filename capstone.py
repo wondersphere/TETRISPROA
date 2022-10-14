@@ -145,22 +145,37 @@ st.pyplot(fig)
 ## Monthly Data
 
 st.markdown("")
-st.markdown("Here we can see how the monthly AQI value changes over time in more detail.")
-            
-st.markdown("")
 st.subheader("Monthly Data")
 
+st.markdown("")
+st.markdown("Here we can see how the monthly AQI value changes over time in more detail.")
+            
 ### Central Jakarta
 st.markdown("**Central Jakarta**")
-st.area_chart(data_monthly[data_monthly["Loc"] == "Central Jakarta"], x = "Month", y = ["AQI mean", "AQI min", "AQI max"])
-st.dataframe(data_monthly[data_monthly["Loc"] == "Central Jakarta"][["Month", "AQI mean", "AQI min", "AQI max"]].transpose().style.format(precision = 2).hide())
+st.area_chart(data_monthly[data_monthly["Loc"] == "Central Jakarta"], 
+    x = "Month", 
+    y = ["AQI mean", "AQI min", "AQI max"])
+st.dataframe(data_monthly[data_monthly["Loc"] == "Central Jakarta"]\
+    [["Month", "AQI mean", "AQI min", "AQI max"]].\
+    transpose().\
+    style.format(precision = 2))
 
 ### South Jakarta
 st.markdown("**South Jakarta**")
-st.area_chart(data_monthly[data_monthly["Loc"] == "South Jakarta"], x = "Month", y = ["AQI mean", "AQI min", "AQI max"])
-st.dataframe(data_monthly[data_monthly["Loc"] == "South Jakarta"][["Month", "AQI mean", "AQI min", "AQI max"]].transpose().style.format(precision = 2).hide())
+st.area_chart(data_monthly[data_monthly["Loc"] == "South Jakarta"], 
+    x = "Month", 
+    y = ["AQI mean", "AQI min", "AQI max"])
+st.dataframe(data_monthly[data_monthly["Loc"] == "South Jakarta"]\
+    [["Month", "AQI mean", "AQI min", "AQI max"]].\
+    transpose().\
+    style.format(precision = 2))
 
+## Conclusion
 
+st.header("Conclusion")
+
+st.markdown("While the AQI level dropped during the COVID lockdown period, we can see an upward trends in 2022. It is even more drastic in South Jakarta area during January 2022 where the AQI value reached the record high for the past 6 years.")
+st.markdown("Left uncorrected withouth any action, we can expect the AQI values to rise beyond what we had in 2016.")
 
 
 
