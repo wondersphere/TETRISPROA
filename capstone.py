@@ -145,7 +145,7 @@ st.pyplot(fig)
 ## Monthly Data
 
 st.markdown("")
-st.markdown("Here we can see how the monthly AQI value changes over time in more detail."
+st.markdown("Here we can see how the monthly AQI value changes over time in more detail.")
             
 st.markdown("")
 st.subheader("Monthly Data")
