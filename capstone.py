@@ -165,7 +165,7 @@ line_central.update_layout(legend_title_text = None)
 st.plotly_chart(line_central)
 
 st.dataframe(data_monthly[data_monthly["Loc"] == "Central Jakarta"]\
-    [["Month", "AQI mean", "AQI min", "AQI max"]].\
+    [["Month", "AQI min", "AQI mean", "AQI max"]].\
     transpose().\
     style.format(precision = 2))
 
@@ -184,7 +184,7 @@ line_south.update_layout(legend_title_text = None)
 st.plotly_chart(line_south)
 
 st.dataframe(data_monthly[data_monthly["Loc"] == "South Jakarta"]\
-    [["Month", "AQI mean", "AQI min", "AQI max"]].\
+    [["Month", "AQI min", "AQI mean", "AQI max"]].\
     transpose().\
     style.format(precision = 2))
 
