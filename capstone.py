@@ -152,7 +152,7 @@ st.markdown("Here we can see how the monthly AQI value changed over time in more
             
 ### Central Jakarta
 st.markdown("**Central Jakarta**")
-st.area_chart(data_monthly[data_monthly["Loc"] == "Central Jakarta"], 
+st.line_chart(data_monthly[data_monthly["Loc"] == "Central Jakarta"], 
     x = "Month", 
     y = ["AQI mean", "AQI min", "AQI max"])
 st.dataframe(data_monthly[data_monthly["Loc"] == "Central Jakarta"]\
@@ -162,7 +162,7 @@ st.dataframe(data_monthly[data_monthly["Loc"] == "Central Jakarta"]\
 
 ### South Jakarta
 st.markdown("**South Jakarta**")
-st.area_chart(data_monthly[data_monthly["Loc"] == "South Jakarta"], 
+st.line_chart(data_monthly[data_monthly["Loc"] == "South Jakarta"], 
     x = "Month", 
     y = ["AQI mean", "AQI min", "AQI max"])
 st.dataframe(data_monthly[data_monthly["Loc"] == "South Jakarta"]\
