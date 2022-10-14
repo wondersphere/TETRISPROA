@@ -119,7 +119,7 @@ with c1:
     components.iframe("https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d63465.833488223354!2d106.76461943256236!3d-6.182308177244731!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f436b8c94b07%3A0x6ea6d5398b7c82f6!2sCentral%20Jakarta%2C%20Central%20Jakarta%20City%2C%20Jakarta!5e0!3m2!1sen!2sid!4v1665699018349!5m2!1sen!2sid")
     styler_yearly =\
         data_yearly[data_yearly["Loc"] == "Central Jakarta"][["Year", "AQI min", "AQI mean", "AQI max"]].\
-        style.hide_index().format(precision = 2).bar(subset = ["AQI min", "AQI mean", "AQI max"], cmap = "Reds")
+        style.hide_index().format(precision = 2).bar(subset = ["AQI min", "AQI mean", "AQI max"], cmap = "seismic")
     st.write(styler_yearly.to_html(), unsafe_allow_html = True)
     
 with c2:
@@ -127,7 +127,7 @@ with c2:
     components.iframe("https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d126907.03875481836!2d106.73186763750911!3d-6.2841018694149255!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f1ec2422b0b3%3A0x39a0d0fe47404d02!2sSouth%20Jakarta%2C%20South%20Jakarta%20City%2C%20Jakarta!5e0!3m2!1sen!2sid!4v1665699103708!5m2!1sen!2sid")
     styler_yearly = \
         data_yearly[data_yearly["Loc"] == "South Jakarta"][["Year", "AQI min", "AQI mean", "AQI max"]].\
-        style.hide_index().format(precision = 2).bar(subset = ["AQI min", "AQI mean", "AQI max"], cmap = "Reds")
+        style.hide_index().format(precision = 2).bar(subset = ["AQI min", "AQI mean", "AQI max"], cmap = "seismic")
     st.write(styler_yearly.to_html(), unsafe_allow_html = True)
 
 st.markdown("")
@@ -139,7 +139,13 @@ st.markdown("")
 fig_box = px.box(data, x = "Year", y = "AQI", color = "Loc")
 fig_box.update_layout(plot_bgcolor="rgba(0,0,0,0)")
 fig_box.update_layout(template = "plotly_dark")
-fig_box.update_layout(legend = dict(orientation = "h", y = 1.1, xanchor = "center", yanchor = "middle", x = 0.5))
+fig_box.update_layout(legend = dict( 
+    orientation = "h",
+    x = 0.5,  
+    y = -0.2, 
+    xanchor = "center", 
+    yanchor = "middle"))
+fig_box.update_layout(legend_title_text = None)
 st.plotly_chart(fig_box)
 
 ## Monthly Data
@@ -157,10 +163,16 @@ st.markdown("**Central Jakarta**")
 line_central = \
     px.line(data_monthly[data_monthly["Loc"] == "Central Jakarta"], 
     x = "Month", 
-    y = ["AQI min", "AQI mean", "AQI max"])
+    y = ["AQI min", "AQI mean", "AQI max"], 
+    color_discrete_sequence = ["#0c9d7c", "#636efa", "#ef553b"])
 line_central.update_layout(plot_bgcolor="rgba(0,0,0,0)")
 line_central.update_layout(template = "plotly_dark")
-line_central.update_layout(legend = dict(orientation = "h", y = -0.2, xanchor = "center", yanchor = "middle", x = 0.5))
+line_central.update_layout(legend = dict(  
+    orientation = "h", 
+    x = 0.5, 
+    y = -0.2, 
+    xanchor = "center", 
+    yanchor = "middle"))
 line_central.update_layout(legend_title_text = None)
 st.plotly_chart(line_central)
 
@@ -176,10 +188,16 @@ st.markdown("**South Jakarta**")
 line_south = \
     px.line(data_monthly[data_monthly["Loc"] == "South Jakarta"], 
     x = "Month", 
-    y = ["AQI min", "AQI mean", "AQI max"])
+    y = ["AQI min", "AQI mean", "AQI max"], 
+    color_discrete_sequence = ["#0c9d7c", "#636efa", "#ef553b"])
 line_south.update_layout(plot_bgcolor="rgba(0,0,0,0)")
 line_south.update_layout(template = "plotly_dark")
-line_south.update_layout(legend = dict(orientation = "h", y = -0.2, xanchor = "center", yanchor = "middle", x = 0.5))
+line_south.update_layout(legend = dict( 
+    orientation = "h", 
+    x = 0.5, 
+    y = -0.2, 
+    xanchor = "center", 
+    yanchor = "middle"))
 line_south.update_layout(legend_title_text = None)
 st.plotly_chart(line_south)
 
