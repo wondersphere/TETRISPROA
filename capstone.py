@@ -134,7 +134,7 @@ with c2:
 st.markdown("")
 st.markdown("Looking at the yearly summary from the historical data, it is clearly visible that the AQI value was the highest during 2016. There was a significant decrease starting in 2017. The values dropped even more during the COVID lockdown in 2020 to 2021. However, we see an increase again in 2022 after the COVID lockdown was relaxed. The maximum value in 2022 is almost the same as it was before the COVID lockdown, with South Jakarta area seeing a very drastic increase")
 
-st.markdown("The AQI value distributon for each year can be seen in the box plot below."
+st.markdown("The AQI value distributon for each year can be seen in the box plot below.")
 st.markdown("")
 
 fig = plt.figure()
