@@ -1,5 +1,5 @@
 # TetrisProA
-Tetris ProA Capstone Project - Air Quality Index in Central and South Jakarta (2016-2022)
+Tetris ProA Capstone Project - Air Quality Index Analysis in Central and South Jakarta (2016-2022)
 
 Streamlit link:
 
