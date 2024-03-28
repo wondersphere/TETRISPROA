@@ -36,6 +36,10 @@ data.drop(["PM25", "PM10"], axis = 1, inplace = True)
 
 data["Date"] = pd.to_datetime(data["Date"])
 
+# Convert AQI column to numeric ("mean" operation behavior is changed in pandas 2.0)
+
+data["AQI"] = pd.to_numeric(data["AQI"])
+
 # Drop data below 2016 (the data is incomplete)
 
 data["Year"] = data["Date"].dt.year
